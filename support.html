@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客服中心 | 學習交流平台</title>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #f6f9f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #2A9D8F;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #2A9D8F;
+      border-left: 6px solid #2A9D8F;
+      padding-left: 10px;
+      font-size: 22px;
+      margin-top: 40px;
+    }
+
+    /* FAQ 區塊 */
+    .faq-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      transition: 0.3s;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .faq-item h3 {
+      margin: 0;
+      color: #2A9D8F;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* 聯絡表單 */
+    form {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #2A9D8F;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    button {
+      background-color: #2A9D8F;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #23867c;
+    }
+
+    /* 聯絡資訊 */
+    .contact-info {
+      background: #e9f5f3;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      background: #f2f2f2;
+      color: #555;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>客服中心</h1>
+    <p>有任何問題？我們樂意幫助你 💬</p>
+  </header>
+
+  <div class="container">
+
+    <h2>常見問題 FAQ</h2>
+
+    <div class="faq-item">
+      <h3 onclick="toggleAnswer(this)">🔹 如何購買點數？</h3>
+      <p>您可以前往「點數商城」頁面，選擇合適的方案並完成付款即可。購買後點數會立即加至您的帳戶。</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 onclick="toggleAnswer(this)">🔹 兌換筆記後可以退回點數嗎？</h3>
+      <p>兌換成功後不支援退回點數，但若遇到內容錯誤或無法開啟，可聯繫客服協助處理。</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 onclick="toggleAnswer(this)">🔹 如何上傳我的筆記到商城？</h3>
+      <p>登入帳號後，進入「上傳筆記」頁面，上傳您的檔案並設定兌換點數，經審核後即可上架。</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 onclick="toggleAnswer(this)">🔹 點數會不會過期？</h3>
+      <p>點數永久有效，除非帳戶被停用或刪除。</p>
+    </div>
+
+    <h2>聯絡我們</h2>
+    <form id="contactForm" onsubmit="submitForm(event)">
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">電子郵件：</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">留言內容：</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">送出留言</button>
+    </form>
+
+    <div class="contact-info">
+      <h2>其他聯絡方式</h2>
+      <p>📧 客服信箱：support@studyhub.com</p>
+      <p>📞 客服專線：02-1234-5678（週一至週五 9:00–18:00）</p>
+      <p>💬 Line 官方帳號：@StudyHub</p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 學習交流平台 - 客服中心
+  </footer>
+
+  <script>
+    function toggleAnswer(element) {
+      const p = element.nextElementSibling;
+      p.style.display = (p.style.display === "block") ? "none" : "block";
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if (!name || !email || !message) {
+        alert("⚠️ 請填寫完整資料！");
+        return;
+      }
+
+      alert(`✅ 感謝您的回覆，${name}！客服人員將於 1–2 個工作天內回覆您。`);
+      document.getElementById("contactForm").reset();
+    }
+  </script>
+
+</body>
+</html>

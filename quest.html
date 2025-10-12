@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>提出問題</title>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #e9f5f3;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2A9D8F;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      transition: border 0.3s;
+    }
+
+    input[type="text"]:focus, textarea:focus, select:focus {
+      border-color: #2A9D8F;
+      outline: none;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #2A9D8F;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #23867c;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #2A9D8F;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>提出你的問題</h1>
+    <form action="submit_question.php" method="POST">
+      <label for="title">問題標題</label>
+      <input type="text" id="title" name="title" placeholder="輸入你的問題標題..." required>
+
+      <label for="category">分類</label>
+      <select id="category" name="category" required>
+        <option value="">-- 請選擇 --</option>
+        <option value="math">數學</option>
+        <option value="science">科學</option>
+        <option value="programming">程式設計</option>
+        <option value="language">語言學習</option>
+        <option value="other">其他</option>
+      </select>
+
+      <label for="description">問題描述</label>
+      <textarea id="description" name="description" placeholder="詳細說明你的問題..." required></textarea>
+
+      <button type="submit" class="btn">提交問題</button>
+    </form>
+
+    <a href="web.html" class="back-link">← 回首頁</a>
+  </div>
+</body>
+</html>

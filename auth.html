@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登入 / 註冊 - 知識共享平台</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", sans-serif;
+      background: #f4f6f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px 45px;
+      border-radius: 14px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: #2A9D8F;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #2A9D8F;
+      box-shadow: 0 0 4px rgba(42, 157, 143, 0.5);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #2A9D8F;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #23867b;
+    }
+
+    .toggle {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle a {
+      color: #2A9D8F;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .toggle a:hover {
+      text-decoration: underline;
+    }
+
+    /* 預設只顯示登入表單 */
+    #register-form {
+      display: none;
+    }
+  </style>
+  <script>
+    function toggleForm(form) {
+      if (form === 'login') {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+      } else {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <!-- 登入表單 -->
+    <form id="login-form">
+      <h2>登入帳號</h2>
+      <div class="form-group">
+        <label for="login-email">電子郵件</label>
+        <input type="email" id="login-email" placeholder="輸入您的電子郵件">
+      </div>
+      <div class="form-group">
+        <label for="login-password">密碼</label>
+        <input type="password" id="login-password" placeholder="輸入您的密碼">
+      </div>
+      <button type="submit" class="btn">登入</button>
+      <div class="toggle">
+        還沒有帳號？ <a onclick="toggleForm('register')">立即註冊</a>
+      </div>
+    </form>
+
+    <!-- 註冊表單 -->
+    <form id="register-form">
+      <h2>註冊帳號</h2>
+      <div class="form-group">
+        <label for="register-name">姓名</label>
+        <input type="text" id="register-name" placeholder="輸入您的姓名">
+      </div>
+      <div class="form-group">
+        <label for="register-email">電子郵件</label>
+        <input type="email" id="register-email" placeholder="輸入您的電子郵件">
+      </div>
+      <div class="form-group">
+        <label for="register-password">密碼</label>
+        <input type="password" id="register-password" placeholder="輸入密碼">
+      </div>
+      <div class="form-group">
+        <label for="register-confirm">確認密碼</label>
+        <input type="password" id="register-confirm" placeholder="再次輸入密碼">
+      </div>
+      <button type="submit" class="btn">註冊</button>
+      <div class="toggle">
+        已經有帳號？ <a onclick="toggleForm('login')">立即登入</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

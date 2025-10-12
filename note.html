@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>筆記兌換商城</title>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #f3f9f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #2A9D8F;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .points-display {
+      background: #fff;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 18px;
+      color: #2A9D8F;
+      font-weight: bold;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      color: #2A9D8F;
+      margin-bottom: 6px;
+    }
+
+    .subject {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+      height: 40px;
+      overflow: hidden;
+    }
+
+    .points {
+      font-size: 16px;
+      font-weight: bold;
+      color: #e76f51;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #2A9D8F;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #23867c;
+    }
+
+    footer {
+      text-align: center;
+      background: #f2f2f2;
+      color: #555;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>筆記兌換商城</h1>
+    <p>用你的點數兌換高品質筆記</p>
+  </header>
+
+  <div class="points-display">
+    目前點數：<span id="userPoints">800</span> 點
+  </div>
+
+  <div class="container">
+    <!-- 筆記卡片 1 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?calculus,math" alt="微積分筆記">
+      <h3>微積分 I 筆記精華</h3>
+      <div class="subject">數學系</div>
+      <p>完整整理極限、導數、積分與應用，適合初學與期中複習。</p>
+      <div class="points">需 180 點</div>
+      <a href="#" class="btn" onclick="redeemNote('微積分 I 筆記精華', 180)">兌換筆記</a>
+    </div>
+
+    <!-- 筆記卡片 2 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?economics,graph" alt="經濟學筆記">
+      <h3>個體經濟學重點整理</h3>
+      <div class="subject">經濟系</div>
+      <p>圖像化說明市場均衡、彈性、消費者理論與生產成本。</p>
+      <div class="points">需 200 點</div>
+      <a href="#" class="btn" onclick="redeemNote('個體經濟學重點整理', 200)">兌換筆記</a>
+    </div>
+
+    <!-- 筆記卡片 3 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?accounting,finance" alt="會計學筆記">
+      <h3>初級會計學期末總整理</h3>
+      <div class="subject">會計系</div>
+      <p>收錄資產負債表、損益表與帳務處理實例，考前衝刺必備！</p>
+      <div class="points">需 160 點</div>
+      <a href="#" class="btn" onclick="redeemNote('初級會計學期末總整理', 160)">兌換筆記</a>
+    </div>
+
+    <!-- 筆記卡片 4 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?programming,code" alt="程式設計筆記">
+      <h3>C++ 程式設計筆記</h3>
+      <div class="subject">資訊工程學系</div>
+      <p>重點整理語法、函式、指標、結構與演算法範例。</p>
+      <div class="points">需 220 點</div>
+      <a href="#" class="btn" onclick="redeemNote('C++ 程式設計筆記', 220)">兌換筆記</a>
+    </div>
+
+    <!-- 筆記卡片 5 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?psychology,brain" alt="心理學筆記">
+      <h3>普通心理學講義重點</h3>
+      <div class="subject">心理學系</div>
+      <p>整理知覺、學習、記憶與人格理論重點，搭配例題分析。</p>
+      <div class="points">需 150 點</div>
+      <a href="#" class="btn" onclick="redeemNote('普通心理學講義重點', 150)">兌換筆記</a>
+    </div>
+
+    <!-- 筆記卡片 6 -->
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?biology,microscope" alt="生物學筆記">
+      <h3>普通生物學重點整理</h3>
+      <div class="subject">生命科學系</div>
+      <p>細胞結構、遺傳學、演化與生態核心概念整理。</p>
+      <div class="points">需 170 點</div>
+      <a href="#" class="btn" onclick="redeemNote('普通生物學重點整理', 170)">兌換筆記</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 學習交流平台 - 大學筆記兌換商城
+  </footer>
+
+  <script>
+    let userPoints = 800; // 模擬使用者目前點數
+
+    function redeemNote(noteName, cost) {
+      if (userPoints < cost) {
+        alert("⚠️ 點數不足，請先前往購買點數。");
+        return;
+      }
+
+      if (confirm(`確定要使用 ${cost} 點兌換「${noteName}」嗎？`)) {
+        userPoints -= cost;
+        document.getElementById("userPoints").textContent = userPoints;
+        alert(`✅ 成功兌換「${noteName}」！筆記已加入你的收藏清單。`);
+      }
+    }
+  </script>
+</body>
+</html>

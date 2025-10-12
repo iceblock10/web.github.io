@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家教專區</title>
+  <style>
+    
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #e9f5f3;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2A9D8F;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .tutor-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .tutor-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tutor-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #2A9D8F;
+    }
+
+    h3 {
+      margin: 10px 0 5px;
+      color: #2A9D8F;
+    }
+
+    .subject {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .bio {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .comment{
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #2A9D8F;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #23867c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: #f2f2f2;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>家教專區</h1>
+    <p>找到最適合你的專業老師！</p>
+    <a href="web.html" style="color:#f2f2f2   ; font-weight: bold;">← 回首頁</a>
+  </header>
+
+  <div class="container">
+    <!-- 家教卡片 1 -->
+    <div class="tutor-card">
+      <img src="glass.jpg" alt="Tutor 1" class="tutor-photo">
+      <h3>王小明</h3>
+      <p class="subject">數學 / 物理</p>
+      <p class="bio">台大電機系，三年以上家教經驗，擅長高中數理補習與解題技巧指導。</p>
+      <p class="comment">90%好評</p>
+      <a href="mailto:tutor1@example.com" class="btn">聯絡老師</a>
+    </div>
+
+    <!-- 家教卡片 2 -->
+    <div class="tutor-card">
+      <img src="47.webp" alt="Tutor 2" class="tutor-photo">
+      <h3>千早愛音</h3>
+      <p class="subject">英文 / 多益</p>
+      <p class="bio">英國留學經驗，外文系畢業，具備專業英語教學證照，幫助學生提升口說與考試成績。</p>
+      <p class="comment">89%好評</p>
+      <a href="mailto:tutor2@example.com" class="btn">聯絡老師</a>
+    </div>
+
+    <!-- 家教卡片 3 -->
+    <div class="tutor-card">
+      <img src="professor.jpg" alt="Tutor 3" class="tutor-photo">
+      <h3>派大星教授加博士先生
+      </h3>
+      <p class="subject">程式設計 / Python</p>
+      <p class="bio">五年軟體工程師經驗，精通 Python 與 C++，可輔導程式基礎與競賽。</p>
+      <p class="comment">70%好評</p>
+      <a href="mailto:tutor3@example.com" class="btn">聯絡老師</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 學習交流平台 - 家教專區
+  </footer>
+</body>
+</html>
